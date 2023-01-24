@@ -20,7 +20,12 @@ function App() {
             setDisabled(false);
             setResponse(res.data);
             clearInterval(interval);
+          } else if (res.status === 200 && res.data.status === "fail") {
+            alert("Invalid video ID");
+            setDisabled(false);
+            clearInterval(interval);
           }
+
         }, 1000);
       }
 
